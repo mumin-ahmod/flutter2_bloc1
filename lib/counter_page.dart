@@ -35,6 +35,12 @@ class CounterPage extends StatelessWidget {
             },
             child: const Icon(Icons.remove),
           ),
+          const SizedBox(height: 10),
+          FloatingActionButton(onPressed: (){
+            context.read<CounterBloc>().add(ClearEvent());
+          },
+          child: Text("Clear"),
+          )
         ],
       ),
     );
